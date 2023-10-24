@@ -128,5 +128,6 @@ insert into vod_content_type values(4, 'LIVE');
 /
 
 SELECT * FROM VOD_CONTENT_INFO;
-
+SELECT * FROM TV_CONTENT@DDISHOLDDB;
+select * from vod_content_posters;
 
