@@ -62,6 +62,9 @@ select * from vod_content_info;
 select * from vod_content_types;
 select * from vod_live_content;
 select * from vod_content_info;
+select * from vod_serial_content;
+select * from vod_content_info;
+select * from vod_content_info where content_type = 1 order by created_date desc fetch first 10 rows only;
 --posteriin type aar ni oruulah
 --insert into vod_content_info with poster_type
 --feature film = content_type = 1
@@ -70,4 +73,18 @@ select * from vod_content_info;
 
 select * from vod_live_content;
 select * from user_tab_columns where table_name = 'VOD_LIVE_CONTENT';
-insert into vod_content_info values()
+
+
+--vod_content_info ??? ??? ????? ?? ????? 
+--drop unitel_asset_id
+-- add season and episode
+select * from vod_serial_content;
+alter table vod_serial_content
+drop column unitel_asset_id;
+
+alter table vod_serial_content
+add season number;
+
+alter table vod_serial_content
+add episode number;
+--vod_serial_content ??? ??? ????? ?? ???? ???
