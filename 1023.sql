@@ -57,12 +57,17 @@ SELECT * FROM VOD_CONTENT_POSTERS WHERE CONTENT_ID = 85;
 select * from vod_content_posters;
 select * from vod_poster_types;
 select * from vod_content_posters x left join vod_poster_types y on x.poster_type = y.type;
-select * from vod_live_content;
 select * from tv_channel_info;
 select * from vod_content_info;
 select * from vod_content_types;
 select * from vod_live_content;
 select * from vod_content_info;
+--posteriin type aar ni oruulah
+--insert into vod_content_info with poster_type
+--feature film = content_type = 1
+--serial film = content_type = 2  double insert hiine gesn ug uu? yes, vod_live_Content dotor tsagiin medeelel edr ni bn 
+--live  content_type = 3 
 
-
-
+select * from vod_live_content;
+select * from user_tab_columns where table_name = 'VOD_LIVE_CONTENT';
+insert into vod_content_info values()
