@@ -131,3 +131,4 @@ SELECT * FROM VOD_CONTENT_INFO;
 SELECT * FROM TV_CONTENT@DDISHOLDDB;
 select * from vod_content_posters;
 
+select * from sys_users;
