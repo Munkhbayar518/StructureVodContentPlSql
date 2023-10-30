@@ -28,3 +28,19 @@ begin
     select seq_sms_code.nextval into :NEW.sms_code from dual;
 end;
 /
+
+select * from vod_serial_content;
+alter table vod_serial_content
+rename column name_mon to episode_name;
+
+
+alter table vod_serial_content
+drop column name_eng;
+
+create sequence seq_vod_serial_content_id
+minvalue 1
+maxvalue 10000
+start with 1
+increment by 1
+nocache
+nocycle;

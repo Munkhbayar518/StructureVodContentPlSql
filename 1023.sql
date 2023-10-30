@@ -74,7 +74,7 @@ select * from vod_content_info where content_type = 1 order by created_date desc
 select * from vod_live_content;
 select * from user_tab_columns where table_name = 'VOD_LIVE_CONTENT';
 
-
+select * from vod_serial_content;
 --vod_content_info ??? ??? ????? ?? ????? 
 --drop unitel_asset_id
 -- add season and episode
@@ -88,3 +88,36 @@ add season number;
 alter table vod_serial_content
 add episode number;
 --vod_serial_content ??? ??? ????? ?? ???? ???
+
+
+INSERT INTO VOD_SERIAL_CONTENT(CONTENT_ID, DDISH_OLD_ID, EPISODE_NAME, DESCRIPTION_SHORT, DESCRIPTION_LONG, YEAR, PARENTAL_RATING, TRAILER, IS_FREE, IS_MGL, IS_BOX, AR_PRICE, UPDATED_USER_NAME, UPDATED_ACCESS_TYPE, SEASON, EPISODE) VALUES (67, 1243,'{input.episodeName}','{input.descriptionShort}','{input.descriptionLong}',1995,'{18+}','{input.trailer}','Y','Y','Y',1996,'{audit.UserName}','{audit.accessType}',1, 2);
+
+select * from vod_serial_content;
+select * from vod_live_content;         
+select * from vod_content_info;
+select * from vod_live_content;
+select * from vod_actors_list;
+select * from vod_content_info;
+select * from sys_users;
+INSERT INTO VOD_SERIAL_CONTENT(CONTENT_ID, DDISH_OLD_ID, EPISODE_NAME, DESCRIPTION_SHORT, DESCRIPTION_LONG, YEAR, PARENTAL_RATING, TRAILER, IS_FREE, IS_MGL, IS_BOX, AR_PRICE, UPDATED_USER_NAME, UPDATED_ACCESS_TYPE, SEASON, EPISODE) VALUES (105,123,'????????? ????','I dont feel anything','I dont know why i dont feel anything',1995,'18+','idk','N','Y','Y',1599,'DalishMb','SYS',1, 1);
+select * from vod_content_info where content_id = 116 fetch first 1 rows only;
+select * from vod_content_info;
+select * from vod_content_posters;
+
+/
+set serveroutput on;
+declare
+p_success_message varchar2(200);
+begin
+    vod_package.edit_vod_content(123, 'changes this from package', 2366, 'changes this from package', 'changes this from package', 'changes this from package', 'changes this from package', 'changes this from package', 'changes this from package', 2005, '18+', 'fasdf' ,'N', 'N', 'Y', 5000, 'Y', 'MB','SYS', 54315, 1, p_success_message);
+    
+    DBMS_OUTPUT.PUT_LINE(P_SUCCESS_MESSAGE);
+end;
+/
+ALTER TABLE VOD_CONTENT_INFO 
+RENAME COLUMN UPDATED_ACESSS_TYPE TO UPDATED_ACCESS_TYPE;
+
+
+select * from vod_type;
+select * from vod_content_info;
+commit;
