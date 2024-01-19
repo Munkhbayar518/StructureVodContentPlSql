@@ -1,0 +1,36 @@
+--------------------------------------------------------
+--  File created - Tuesday-September-05-2023   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table TV_CONTENT_GENRES
+--------------------------------------------------------
+
+  CREATE TABLE "UNI_DISH"."TV_CONTENT_GENRES" 
+   (	"ID" NUMBER, 
+	"CONTENT_ID" NUMBER, 
+	"GENRES_ID" NUMBER
+   )  DEFAULT COLLATION "USING_NLS_COMP" SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DWHDATA" ;
+--------------------------------------------------------
+--  DDL for Trigger TR_TV_CONTENT_GENRES
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UNI_DISH"."TR_TV_CONTENT_GENRES" 
+BEFORE INSERT ON TV_CONTENT_GENRES FOR EACH ROW
+BEGIN
+  SELECT UNI_DISH.SEQ_TV_CONTENT_GENRES.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+
+
+/
+ALTER TRIGGER "UNI_DISH"."TR_TV_CONTENT_GENRES" ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TV_CONTENT_GENRES
+--------------------------------------------------------
+
+  ALTER TABLE "UNI_DISH"."TV_CONTENT_GENRES" MODIFY ("ID" NOT NULL ENABLE);
